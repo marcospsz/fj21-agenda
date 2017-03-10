@@ -29,9 +29,7 @@ public class PrimeiroServlet extends HttpServlet{
 		String email = req.getParameter("email");
 		
 		Contato contato = new Contato();
-		
-		
-		
+				
 		out.println("<html>");
 		out.println("<body>");
 		out.println("<br><b>");
