@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,10 +25,10 @@ public class AdicionaServlet extends HttpServlet{
 		
 		PrintWriter out = resp.getWriter();
 		
-		if(req.getParameter("nome")==null){
-			out.println("sem parametros");
+		//if(req.getParameter("nome")==null){
+			//out.println("sem parametros");
 			
-		}else{
+		//}else{
 		String nome = req.getParameter("nome");
 		String email = req.getParameter("email");
 		String endereco = req.getParameter("endereco");
@@ -59,9 +60,13 @@ public class AdicionaServlet extends HttpServlet{
 		ContatoDao dao = new ContatoDao();
 		
 		dao.adiciona(contato);
+		
+		RequestDispatcher rd = req.getRequestDispatcher("contato-adicionado.jsp");
+		
+		rd.forward(req, resp);
 				
-		out.println("Contato " + contato.getNome() + " adicionado com sucesso");	
-		}
+		//out.println("Contato " + contato.getNome() + " adicionado com sucesso");	
+		//}
 		
 	}	
 

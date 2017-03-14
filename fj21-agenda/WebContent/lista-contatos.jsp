@@ -8,11 +8,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Lista de Contatos</title>
 </head>
 <body>
 	
-	<fmt:formatDate value="${contato.dataNascimento.time}" pattern="dd/MM/yyyy" />
+	
 
 	<c:import url="header.jsp" />
 
@@ -53,7 +53,7 @@
 				</td>				
 							
 				<td>${contato.endereco}</td>
-			    <td>${contato.dataNascimento}</td>
+			    <td><fmt:formatDate value="${contato.dataNascimento.time}" pattern = "dd/MM/yyyy" /></td>
 			
 			</tr>
 			
