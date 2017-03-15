@@ -10,33 +10,33 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Lista de Contatos</title>
 </head>
-<body>
-	
-	
+<body>	
 
 	<c:import url="header.jsp" />
-
-	<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao"/>	
 	
 	<table border=1>
 		
 		<tr bgcolor="#00264d">
 			
 			<td><b><center><font size="3" color="white">LINHA</font></center></td>
-			<td><b><center><font size="3" color="white">MOD</font></center></td>			
+			<td><b><center><font size="3" color="white">MOD</font></center></td>
+			<td><b><center><font size="3" color="white">ID</font></center></td>			
 			<td><b><center><font size="3" color="white">NOME</font></center></td>
 			<td><b><center><font size="3" color="white">EMAIL</font></center></td>
 			<td><b><center><font size="3" color="white">ENDERECO</font></center></td>
 			<td><b><center><font size="3" color="white">DATA NASCIMENTO</font></center></td>
+			<td><b><center><font size="3" color="white">ACAO</font></center></td>
 		
-		</tr>		
-	
-		<c:forEach var="contato" varStatus="id" items="${dao.lista}">
+		</tr>	
+		
+			
+		<c:forEach var="contato" varStatus="id" items="${contatos}">
 		
 			<tr bgcolor="#${id.count % 2 == 0? 'd1d1e0':'ffffff'}">			
 				
 				<td>${id.count}</td>
-				<td>${id.count % 2}</td>							
+				<td>${id.count % 2}</td>
+				<td>${contato.id}</td>							
 				<td>${contato.nome}</td>
 				<td>
 					<c:choose>					
@@ -54,6 +54,10 @@
 							
 				<td>${contato.endereco}</td>
 			    <td><fmt:formatDate value="${contato.dataNascimento.time}" pattern = "dd/MM/yyyy" /></td>
+			    
+			    <td>
+			    	<a href="mvc?logica=RemoveContatoLogic&id=${contato.id}">Remover</a>
+			    </td>
 			
 			</tr>
 			

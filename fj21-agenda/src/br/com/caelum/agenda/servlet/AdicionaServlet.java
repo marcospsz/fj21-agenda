@@ -25,10 +25,10 @@ public class AdicionaServlet extends HttpServlet{
 		
 		PrintWriter out = resp.getWriter();
 		
-		//if(req.getParameter("nome")==null){
-			//out.println("sem parametros");
+		if(req.getParameter("nome")==null){
+			out.println("sem parametros");
 			
-		//}else{
+		}else{
 		String nome = req.getParameter("nome");
 		String email = req.getParameter("email");
 		String endereco = req.getParameter("endereco");
@@ -66,7 +66,7 @@ public class AdicionaServlet extends HttpServlet{
 		rd.forward(req, resp);
 				
 		//out.println("Contato " + contato.getNome() + " adicionado com sucesso");	
-		//}
+		}
 		
 	}	
 

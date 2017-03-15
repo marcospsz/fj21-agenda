@@ -14,13 +14,18 @@ import br.com.caelum.agenda.modelo.Contato;
 
 public class ContatoDao {
 	private Connection connection;
+	
+	public ContatoDao(Connection conn){
+		
+		this.connection = conn;			
+	}
 
 	public ContatoDao() {
 		try {
 			this.connection = new ConnectionFactory().getConnection();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
-		}
+		}		
 	}
 
 	public void adiciona(Contato contato) {

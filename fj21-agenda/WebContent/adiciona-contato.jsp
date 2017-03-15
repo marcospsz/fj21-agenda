@@ -21,7 +21,7 @@
 		Nome: <input type="text" name="nome" /><br />
 		Email: <input type="text" name="email" /><br />
 		Endereco: <input type="text" name="endereco" /><br />
-		Data Nascimento: <campoData:campoData id="dataNascimento" /><br/ >
+		Data Nascimento: <campoData:campoData id="dataNascimento" /><br />
 		
 		<input type="submit" value="Gravar">	
 		
